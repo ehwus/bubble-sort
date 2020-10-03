@@ -7,11 +7,17 @@ def bubble_sort(array)
   # return original array
   return array if array.length < 2
 
-  # all other cases
+  # start loop for n-1 times
+  # this is the number required
+  # to guarantee successful sort
   (array.length - 1).times do
+    # iterate over array, use map to mutate
+    # takes one item to its sorted location
     (0..array.length - 2).map do |index|
+      # compare two items in array
       next unless array[index] > array[index + 1]
 
+      # swap if 1 > 2
       temp = array[index + 1]
       array[index + 1] = array[index]
       array[index] = temp
